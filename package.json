@@ -1,0 +1,35 @@
+{
+  "name": "grant-uniapp-cli",
+  "version": "1.0.6",
+  "description": "uniapp cli",
+  "bin": {
+    "uniapp": "bin/index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "watch": "npm run build -- --watch"
+  },
+  "keywords": [
+    "uniapp",
+    "vue2",
+    "vue3",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^9.4.0",
+    "download-git-repo": "^3.0.2",
+    "handlebars": "^4.7.7",
+    "inquirer": "^8.0.0",
+    "log-symbols": "^4.1.0",
+    "ora": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1"
+  }
+}
