@@ -10,13 +10,6 @@ const symbols = require('log-symbols')  // 在输出信息前面加上 A x等图
 
 const tmls = require('./utils/temp')
 
-const pipe = require('./utils/pipe')
-
-
-console.log(process.cwd())
-
-pipe(path.resolve(process.cwd(), './src/files/.eslintrc.js'), './test001/2.js')
-
 program.version('1.0.6', '-v, --version')
   .command('create <name>')
   .action((name) => {
@@ -48,50 +41,35 @@ program.version('1.0.6', '-v, --version')
                 value: 'vue3',
             }
         ]
-      },
-      {
-        type: 'list',
-        name: 'eslint',
-        message: 'Please pick an ESLint preset:',
-        choices: [
-            {
-                name: 'none',
-                value: 'none',
-            },
-            {
-                name: 'Eslint + Prettier',
-                value: 'eslint',
-            }
-        ]
       }
     ]).then(answer => {
       const loading = ora('The template is being downloaded ...')
       loading.start()
-      // download(`${tmls[answer.preset]}`, name, {}, (err) => {
-      //       console.log(err ? 'Error' : 'Success')
-      //       if(err) {
-      //         loading.fail()
-      //         console.log(symbols.error, chalk.red(err))
-      //       } else {
-      //         loading.succeed()
-      //         const fileName = `${name}/package.json`
-      //         const meta = {
-      //           name,
-      //           description: answer.description,
-      //           version: answer.version || '1.0.0',
-      //           author: answer.author
-      //         }
-      //         if(fs.existsSync(fileName)) {
-      //           const content = fs.readFileSync(fileName).toString()
-      //           const result = handlebars.compile(content)(meta)
-      //           fs.writeFileSync(fileName, result)
-      //         }
-      //         console.log(symbols.success, chalk.green('Done'))
-      //         console.log(chalk.blue(`try run:`))
-      //         console.log(chalk.red(`cd ${name}`))
-      //         console.log(chalk.red(`npm install`))
-      //       }
-      // })
+      download(`${tmls[answer.preset]}`, name, {}, (err) => {
+            console.log(err ? 'Error' : 'Success')
+            if(err) {
+              loading.fail()
+              console.log(symbols.error, chalk.red(err))
+            } else {
+              loading.succeed()
+              const fileName = `${name}/package.json`
+              const meta = {
+                name,
+                description: answer.description,
+                version: answer.version || '1.0.0',
+                author: answer.author
+              }
+              if(fs.existsSync(fileName)) {
+                const content = fs.readFileSync(fileName).toString()
+                const result = handlebars.compile(content)(meta)
+                fs.writeFileSync(fileName, result)
+              }
+              console.log(symbols.success, chalk.green('Done'))
+              console.log(chalk.blue(`try run:`))
+              console.log(chalk.red(`cd ${name}`))
+              console.log(chalk.red(`npm install`))
+            }
+      })
     })
   })
 
