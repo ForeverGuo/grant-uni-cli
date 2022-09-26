@@ -8,6 +8,8 @@ var inquirer = require('inquirer');
 
 var fs = require('fs');
 
+var path = require('path');
+
 var handlebars = require('handlebars'); // 对 package.json 进行编写
 
 
@@ -20,10 +22,8 @@ var chalk = require('chalk'); // 为打印信息加上样式
 var symbols = require('log-symbols'); // 在输出信息前面加上 A x等图标
 
 
-var tmls = {
-  "vue2": 'ForeverGuo/uniapp-template-vue2#master',
-  "vue3": 'ForeverGuo/uniapp-template-vue3#master'
-};
+var tmls = require('./utils/temp');
+
 program.version('1.0.6', '-v, --version').command('create <name>').action(function (name) {
   // 命令行交互
   inquirer.prompt([{
