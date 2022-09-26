@@ -10,7 +10,7 @@ const symbols = require('log-symbols')  // 在输出信息前面加上 A x等图
 
 const tmls = require('./utils/temp')
 
-const pipe = require('./utils/rw')
+const pipe = require('./utils/pipe')
 
 
 console.log(process.cwd())
