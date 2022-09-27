@@ -15,7 +15,9 @@ const pipe = require('./utils/pipe')
 
 console.log(process.cwd())
 
-pipe(path.resolve(process.cwd(), './src/files/.eslintrc.js'), './test001/2.js')
+console.log(__dirname)
+
+
 
 program.version('1.0.6', '-v, --version')
   .command('create <name>')
@@ -51,7 +53,7 @@ program.version('1.0.6', '-v, --version')
       },
       {
         type: 'list',
-        name: 'eslint',
+        name: 'lint',
         message: 'Please pick an ESLint preset:',
         choices: [
             {
@@ -67,31 +69,34 @@ program.version('1.0.6', '-v, --version')
     ]).then(answer => {
       const loading = ora('The template is being downloaded ...')
       loading.start()
-      // download(`${tmls[answer.preset]}`, name, {}, (err) => {
-      //       console.log(err ? 'Error' : 'Success')
-      //       if(err) {
-      //         loading.fail()
-      //         console.log(symbols.error, chalk.red(err))
-      //       } else {
-      //         loading.succeed()
-      //         const fileName = `${name}/package.json`
-      //         const meta = {
-      //           name,
-      //           description: answer.description,
-      //           version: answer.version || '1.0.0',
-      //           author: answer.author
-      //         }
-      //         if(fs.existsSync(fileName)) {
-      //           const content = fs.readFileSync(fileName).toString()
-      //           const result = handlebars.compile(content)(meta)
-      //           fs.writeFileSync(fileName, result)
-      //         }
-      //         console.log(symbols.success, chalk.green('Done'))
-      //         console.log(chalk.blue(`try run:`))
-      //         console.log(chalk.red(`cd ${name}`))
-      //         console.log(chalk.red(`npm install`))
-      //       }
-      // })
+      download(`${tmls[answer.preset]}`, name, {}, (err) => {
+            console.log(err ? 'Error' : 'Success')
+            if(err) {
+              loading.fail()
+              console.log(symbols.error, chalk.red(err))
+            } else {
+              loading.succeed()
+              const fileName = `${name}/package.json`
+              console.log(path.resolve(__dirname, './files/.eslintrc.js'))
+              console.log(path.resolve(process.cwd(), `./${name}`))
+              pipe(path.resolve(__dirname, './files/.eslintrc.js'), path.resolve(process.cwd(), `./${name}/.eslintrc.js`))
+              const meta = {
+                name,
+                description: answer.description,
+                version: answer.version || '1.0.0',
+                author: answer.author
+              }
+              if(fs.existsSync(fileName)) {
+                const content = fs.readFileSync(fileName).toString()
+                const result = handlebars.compile(content)(meta)
+                fs.writeFileSync(fileName, result)
+              }
+              console.log(symbols.success, chalk.green('Done'))
+              console.log(chalk.blue(`try run:`))
+              console.log(chalk.red(`cd ${name}`))
+              console.log(chalk.red(`npm install`))
+            }
+      })
     })
   })
 
