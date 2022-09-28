@@ -24,29 +24,11 @@ var symbols = require('log-symbols'); // 在输出信息前面加上 A x等图�
 
 var tmls = require('./utils/temp');
 
+var prompt = require('./utils/prompt');
+
 program.version('1.0.6', '-v, --version').command('create <name>').action(function (name) {
   // 命令行交互
-  inquirer.prompt([{
-    name: 'version',
-    message: 'version(1.0.0)'
-  }, {
-    name: 'description',
-    message: 'description'
-  }, {
-    name: 'author',
-    message: 'author'
-  }, {
-    type: 'list',
-    name: 'preset',
-    message: 'Please pick a preset:',
-    choices: [{
-      name: 'Default (Vue2)',
-      value: 'vue2'
-    }, {
-      name: 'Default (Vue3)',
-      value: 'vue3'
-    }]
-  }]).then(function (answer) {
+  inquirer.prompt(prompt).then(function (answer) {
     var loading = ora('The template is being downloaded ...');
     loading.start();
     download("".concat(tmls[answer.preset]), name, {}, function (err) {

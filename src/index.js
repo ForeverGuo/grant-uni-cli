@@ -10,39 +10,13 @@ const symbols = require('log-symbols')  // 在输出信息前面加上 A x等图
 
 const tmls = require('./utils/temp')
 
+const prompt = require('./utils/prompt')
+
 program.version('1.0.6', '-v, --version')
   .command('create <name>')
   .action((name) => {
     // 命令行交互
-    inquirer.prompt([
-      {
-        name: 'version',
-        message: 'version(1.0.0)'
-      },
-      {
-        name: 'description',
-        message: 'description'
-      },
-      {
-        name: 'author',
-        message: 'author'
-      },
-      {
-        type: 'list',
-        name: 'preset',
-        message: 'Please pick a preset:',
-        choices: [
-            {
-                name: 'Default (Vue2)',
-                value: 'vue2',
-            },
-            {
-                name: 'Default (Vue3)',
-                value: 'vue3',
-            }
-        ]
-      }
-    ]).then(answer => {
+    inquirer.prompt(prompt).then(answer => {
       const loading = ora('The template is being downloaded ...')
       loading.start()
       download(`${tmls[answer.preset]}`, name, {}, (err) => {
