@@ -14,6 +14,9 @@
     "uniapp",
     "vue2",
     "vue3",
+    "eslint",
+    "prettier",
+    "husky",
     "cli"
   ],
   "author": "",
@@ -22,10 +25,11 @@
     "chalk": "^4.1.0",
     "commander": "^9.4.0",
     "download-git-repo": "^3.0.2",
-    "handlebars": "^4.7.7",
     "inquirer": "^8.0.0",
+    "lodash": "^4.17.21",
     "log-symbols": "^4.1.0",
-    "ora": "^4.1.1"
+    "ora": "^4.1.1",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",

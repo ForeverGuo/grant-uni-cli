@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
   "name": "",
   "version": "",
@@ -13,11 +15,8 @@ module.exports = {
   "scripts": {
     "init": "npm install"
   },
-  "keywords": [
-    "uniapp",
-    "vue2"
-  ],
+  "keywords": ["uniapp", "vue2"],
   "author": "",
   "license": "ISC",
   "devDependencies": {}
-}
+};

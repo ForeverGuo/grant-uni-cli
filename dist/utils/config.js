@@ -1,11 +1,12 @@
+"use strict";
+
 // 模板数据
-const templates = {
+var templates = {
   "vue2": 'ForeverGuo/uniapp-template-vue2#master',
   "vue3": 'ForeverGuo/uniapp-template-vue3#master'
-}
+}; // 配置 eslint + prettier 依赖
 
-// 配置 eslint + prettier 依赖
-const eslint = {
+var eslint = {
   "devDependencies": {
     "@vue/cli-plugin-eslint": "^4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
@@ -15,8 +16,7 @@ const eslint = {
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.2.1"
   }
-}
-
+};
 /*
  配置 husky 依赖
  version: > 4.x
@@ -29,28 +29,24 @@ const eslint = {
   为了解决每次手动启用 husky，在 package.json scripts 中添加 "prepare": "husky install"
 
 **/
-const husky = {
+
+var husky = {
   "devDependencies": {
-    "husky": "^8.0.1",  
+    "husky": "^8.0.1",
     "lint-staged": "^10.5.4",
-    "pre-commit": "^1.2.2",
+    "pre-commit": "^1.2.2"
   },
   "scripts": {
     "test": "lint-staged",
-		"lint": "eslint --ext .js,.vue",
-		"init": "npx husky-init && npm install",
+    "lint": "eslint --ext .js,.vue",
+    "init": "npx husky-init && npm install"
   },
   "lint-staged": {
-    "*.{js,vue}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add -A"
-    ]
+    "*.{js,vue}": ["prettier --write", "eslint --fix", "git add -A"]
   }
-}
-
+};
 module.exports = {
-  templates,
+  templates: templates,
   eslint_json: eslint,
   husky_json: husky
-}
+};
