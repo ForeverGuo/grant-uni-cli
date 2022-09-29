@@ -25,5 +25,35 @@ module.exports = [
             value: 'vue3',
         }
     ]
+  },
+  {
+    type: 'list',
+    name: 'lint',
+    message: 'Please pick an ESLint preset:',
+    choices: [
+        {
+            name: 'none',
+            value: 'none',
+        },
+        {
+            name: 'Eslint + Prettier（VScode开发，建议勾选）',
+            value: 'eslint',
+        }
+    ]
+  },
+  {
+    type: 'list',
+    name: 'husky',
+    message: 'Please pick a husky:',
+    choices: [
+        {
+            name: 'none',
+            value: 'none',
+        },
+        {
+            name: 'husky（pre-commit check）',
+            value: 'husky',
+        }
+    ]
   }
 ]
