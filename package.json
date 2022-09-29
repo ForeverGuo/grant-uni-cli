@@ -1,6 +1,6 @@
 {
   "name": "grant-uniapp-cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "uniapp cli",
   "bin": {
     "uniapp": "bin/index.js"
