@@ -82,10 +82,10 @@ program.version('1.0.7', '-v, --version').command('create <name>').action(functi
         }
 
         console.log(symbols.success, chalk.green('Done'));
-        console.log(chalk.blue("try run:"));
-        console.log(chalk.red("cd ".concat(name)));
-        console.log(chalk.red("npm run init"));
-        console.log(chalk.yellow("Please run in HBuilder X"));
+        log(chalk.blue("   \n     \u6B22\u8FCE\u4F7F\u7528 uniapp \u811A\u624B\u67B6 \n\n      \u5F53\u524D\u7248\u672C ".concat(answer.version || '1.0.0', " \n")));
+        log(chalk.red("     1  cd ".concat(name, " \n")));
+        log(chalk.red("     2  npm run init \n"));
+        log(chalk.yellow("    Please run in HBuilder X \n"));
       }
     });
   });
