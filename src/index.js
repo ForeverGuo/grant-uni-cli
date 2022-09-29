@@ -17,11 +17,9 @@ const packageObj = require('./files/package')
 const prompt = require('./utils/prompt')
 const initEslint = require('./utils/eslint')
 
-const packageJsonData = JSON.parse(fs.readFileSync(path.resolve(process.cwd(),'./package.json'), 'utf8'))
-
 const log = console.log
 
-program.version(`${packageJsonData.version}`, '-v, --version')
+program.version('1.0.9', '-v, --version')
   .command('create <name>')
   .action((name) => {
     // 命令行交互
@@ -62,7 +60,7 @@ program.version(`${packageJsonData.version}`, '-v, --version')
                 fs.writeFileSync(fileName, JSON.stringify(packageObj, null, '\t'))
               }
               console.log(symbols.success, chalk.green('Done'))
-              log(chalk.blue(`   \n     欢迎使用 uniapp 脚手架 \n\n      当前版本 ${packageJsonData.version} \n`))
+              log(chalk.blue(`   \n     欢迎使用 uniapp 脚手架 \n\n      当前版本 1.0.9 \n`))
               log(chalk.red(`     1  cd ${name} \n`))
               log(chalk.red(`     2  npm run init \n`))
               log(chalk.yellow(`    Please run in HBuilder X \n`))

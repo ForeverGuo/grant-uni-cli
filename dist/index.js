@@ -36,9 +36,8 @@ var prompt = require('./utils/prompt');
 
 var initEslint = require('./utils/eslint');
 
-var packageJsonData = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), './package.json'), 'utf8'));
 var log = console.log;
-program.version("".concat(packageJsonData.version), '-v, --version').command('create <name>').action(function (name) {
+program.version('1.0.9', '-v, --version').command('create <name>').action(function (name) {
   // 命令行交互
   inquirer.prompt(prompt).then(function (answer) {
     var loading = ora('The template is loading ...');
@@ -83,7 +82,7 @@ program.version("".concat(packageJsonData.version), '-v, --version').command('cr
         }
 
         console.log(symbols.success, chalk.green('Done'));
-        log(chalk.blue("   \n     \u6B22\u8FCE\u4F7F\u7528 uniapp \u811A\u624B\u67B6 \n\n      \u5F53\u524D\u7248\u672C ".concat(packageJsonData.version, " \n")));
+        log(chalk.blue("   \n     \u6B22\u8FCE\u4F7F\u7528 uniapp \u811A\u624B\u67B6 \n\n      \u5F53\u524D\u7248\u672C 1.0.9 \n"));
         log(chalk.red("     1  cd ".concat(name, " \n")));
         log(chalk.red("     2  npm run init \n"));
         log(chalk.yellow("    Please run in HBuilder X \n"));
