@@ -19,7 +19,7 @@ const initEslint = require('./utils/eslint')
 
 const log = console.log
 
-program.version('1.0.6', '-v, --version')
+program.version('1.0.7', '-v, --version')
   .command('create <name>')
   .action((name) => {
     // 命令行交互
