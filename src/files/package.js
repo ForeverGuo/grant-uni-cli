@@ -1,23 +1,38 @@
-module.exports = {
-  "name": "",
-  "version": "",
-  "description": "",
-  "main": "main.js",
-  "dependencies": {
+const dependencies = {
+  "vue2": {
     "axios": "^0.21.1",
     "dayjs": "^1.10.5",
     "uview-ui": "^1.8.4",
     "vue": "^2.6.12",
     "vuex": "^3.6.2"
   },
-  "scripts": {
-    "init": "npm install"
-  },
-  "keywords": [
-    "uniapp",
-    "vue2"
-  ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {}
+  "vue3": {
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
+    "pinia": "^2.0.22",
+    "vk-uview-ui": "^1.3.9",
+    "vue": "^3.2.38"
+  }
 }
+
+const packageFn = (name) => {
+  return {
+    "name": "uniapp",
+    "version": "",
+    "description": "",
+    "main": "main.js",
+    "dependencies": dependencies[name],
+    "scripts": {
+      "init": "npm install"
+    },
+    "keywords": [
+      "uniapp",
+      `${name}`
+    ],
+    "author": "grant",
+    "license": "ISC",
+    "devDependencies": {}
+  }
+}
+
+module.exports = packageFn

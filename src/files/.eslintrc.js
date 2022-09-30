@@ -10,12 +10,18 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  // 自定义规则配置
+  // 自定义规则配置 有些vue推荐规则，如若不需要，可以在rules中屏蔽
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-var': 2,
     camelcase: 'off',
-    indent: [2, 2]
+    indent: [2, 2],
+    'vue/multi-word-component-names': [
+      'error',
+      {
+        ignores: ['index'] // 简要忽略的组件名
+      }
+    ]
   }
 }

@@ -36,7 +36,7 @@ module.exports = [
             value: 'none',
         },
         {
-            name: 'Eslint + Prettier（VScode开发，建议勾选）',
+            name: 'Eslint + Prettier ( 代码规范控制 )',
             value: 'eslint',
         }
     ]
@@ -51,7 +51,7 @@ module.exports = [
             value: 'none',
         },
         {
-            name: 'husky（pre-commit check）',
+            name: 'husky ( git hook 代码检查 )',
             value: 'husky',
         }
     ]

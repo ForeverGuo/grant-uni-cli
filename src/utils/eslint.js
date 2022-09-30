@@ -8,6 +8,10 @@ const initEslint = (name) => {
     path.resolve(process.cwd(), `./${name}/.eslintrc.js`)
   );
   pipe(
+    path.resolve(__dirname, "../files/.eslintignore"),
+    path.resolve(process.cwd(), `./${name}/.eslintignore`)
+  );
+  pipe(
     path.resolve(__dirname, "../files/.prettierrc"),
     path.resolve(process.cwd(), `./${name}/.prettierrc`)
   );
