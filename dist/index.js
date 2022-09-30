@@ -37,7 +37,7 @@ var prompt = require('./utils/prompt');
 var initEslint = require('./utils/eslint');
 
 var log = console.log;
-program.version('1.0.9', '-v, --version').command('create <name>').action(function (name) {
+program.version('1.1.0', '-v, --version').command('create <name>').action(function (name) {
   // 命令行交互
   inquirer.prompt(prompt).then(function (answer) {
     var loading = ora('The template is loading ...');
