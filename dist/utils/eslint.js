@@ -8,6 +8,7 @@ var fs = require('fs');
 
 var initEslint = function initEslint(name) {
   pipe(path.resolve(__dirname, "../files/.eslintrc.js"), path.resolve(process.cwd(), "./".concat(name, "/.eslintrc.js")));
+  pipe(path.resolve(__dirname, "../files/.eslintignore"), path.resolve(process.cwd(), "./".concat(name, "/.eslintignore")));
   pipe(path.resolve(__dirname, "../files/.prettierrc"), path.resolve(process.cwd(), "./".concat(name, "/.prettierrc")));
 
   if (!fs.existsSync("./".concat(name, "/.vscode"))) {

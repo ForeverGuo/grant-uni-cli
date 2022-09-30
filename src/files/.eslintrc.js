@@ -16,12 +16,6 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-var': 2,
     camelcase: 'off',
-    indent: [2, 2],
-    'vue/multi-word-component-names': [
-      'error',
-      {
-        ignores: ['index'] // 简要忽略的组件名
-      }
-    ]
+    indent: [2, 2]
   }
 }
