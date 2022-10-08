@@ -13,13 +13,13 @@ const { templates, eslint_json, husky_json } = require('./utils/config')
 
 const pipe = require('./utils/pipe')
 
-const packageFn = require('./files/package')
+const packageFn = require('./utils/package')
 const prompt = require('./utils/prompt')
 const initEslint = require('./utils/eslint')
 
 const log = console.log
 
-program.version('1.1.0', '-v, --version')
+program.version('1.1.1', '-v, --version')
   .command('create <name>')
   .action((name) => {
     // 命令行交互
