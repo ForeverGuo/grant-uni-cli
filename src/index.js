@@ -36,7 +36,7 @@ program.version('1.0.9', '-v, --version')
               console.log(symbols.error, chalk.red(err))
             } else {
               loading.succeed()
-              const fileName = `${name}/package.json` 
+              const fileName = `${name}/package.json`
               const meta = {
                 name,
                 description: description,
