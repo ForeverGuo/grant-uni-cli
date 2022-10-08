@@ -30,7 +30,7 @@ var _require = require('./utils/config'),
 
 var pipe = require('./utils/pipe');
 
-var packageObj = require('./files/package');
+var packageFn = require('./utils/package');
 
 var prompt = require('./utils/prompt');
 
@@ -42,7 +42,14 @@ program.version('1.0.9', '-v, --version').command('create <name>').action(functi
   inquirer.prompt(prompt).then(function (answer) {
     var loading = ora('The template is loading ...');
     loading.start();
-    download("".concat(templates[answer.preset]), name, {}, function (err) {
+    var preset = answer.preset,
+        version = answer.version,
+        description = answer.description,
+        author = answer.author,
+        lint = answer.lint,
+        husky = answer.husky;
+    var packageObj = packageFn(preset);
+    download("".concat(templates[preset]), name, {}, function (err) {
       console.log(err ? 'Error' : 'Success');
 
       if (err) {
@@ -53,19 +60,19 @@ program.version('1.0.9', '-v, --version').command('create <name>').action(functi
         var fileName = "".concat(name, "/package.json");
         var meta = {
           name: name,
-          description: answer.description,
-          version: answer.version || '1.0.0',
-          author: answer.author,
+          description: description,
+          version: version || '1.0.0',
+          author: author,
           devDependencies: {}
         };
 
-        if (answer.lint === 'eslint') {
+        if (lint === 'eslint') {
           initEslint(name);
 
           _.merge(meta, eslint_json);
         }
 
-        if (answer.husky === 'husky') {
+        if (husky === 'husky') {
           // if(!fs.existsSync(`./${name}/.husky`)) {
           //   fs.mkdirSync(`./${name}/.husky`);  // 创建.husky
           //   shell.exec(`cd ./${name} && git init`)

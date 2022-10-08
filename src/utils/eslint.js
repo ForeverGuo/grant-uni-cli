@@ -2,23 +2,28 @@ const path = require('path')
 const pipe = require('./pipe')
 const fs = require('fs')
 
+const resolvePath = (path_name) => {
+  const base_path = '../../files'
+  return path.resolve(__dirname, base_path, `./${path_name}`)
+}
+
 const initEslint = (name) => {
   pipe(
-    path.resolve(__dirname, "../files/.eslintrc.js"),
+    resolvePath('.eslintrc.js'),
     path.resolve(process.cwd(), `./${name}/.eslintrc.js`)
   );
   pipe(
-    path.resolve(__dirname, "../files/.eslintignore"),
+    resolvePath('.eslintignore'),
     path.resolve(process.cwd(), `./${name}/.eslintignore`)
   );
   pipe(
-    path.resolve(__dirname, "../files/.prettierrc"),
+    resolvePath('.prettierrc'),
     path.resolve(process.cwd(), `./${name}/.prettierrc`)
   );
   if (!fs.existsSync(`./${name}/.vscode`)) {
     fs.mkdirSync(`./${name}/.vscode`);
     pipe(
-      path.resolve(__dirname, "../files/setting.json"),
+      resolvePath('setting.json'),
       path.resolve(process.cwd(), `./${name}/.vscode/setting.json`)
     );
   }

@@ -51,7 +51,7 @@ module.exports = [
             value: 'none',
         },
         {
-            name: 'husky ( git hook 代码检查 )',
+            name: 'husky ( git hook 代码检查, 须与 eslint 配合使用 )',
             value: 'husky',
         }
     ]

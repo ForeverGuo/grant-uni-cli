@@ -13,7 +13,7 @@ const { templates, eslint_json, husky_json } = require('./utils/config')
 
 const pipe = require('./utils/pipe')
 
-const packageFn = require('./files/package')
+const packageFn = require('./utils/package')
 const prompt = require('./utils/prompt')
 const initEslint = require('./utils/eslint')
 
