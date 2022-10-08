@@ -42,7 +42,7 @@ program.version('1.0.9', '-v, --version')
                 description: description,
                 version: version || '1.0.0',
                 author: author,
-                devDependencies: {}
+                devDependencies: {} 
               }
               if(lint === 'eslint') {
                 initEslint(name)
