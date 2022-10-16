@@ -8,6 +8,7 @@ const chalk = require('chalk')  // 为打印信息加上样式
 const symbols = require('log-symbols')  // 在输出信息前面加上 A x等图标
 const _ = require('lodash')
 const shell = require('shelljs')
+const boxen = require('boxen')
 
 const { templates, eslint_json, husky_json } = require('./utils/config')
 
@@ -22,6 +23,16 @@ const log = console.log
 program.version('1.1.1', '-v, --version')
   .command('create <name>')
   .action((name) => {
+    log(boxen(
+      chalk.yellow.bold(`HELLO UNIAPP`), 
+      { 
+      title: chalk.red.bold(`WELCOME`), 
+      titleAlignment: 'center',
+      height: 4, 
+      padding: 2, 
+      borderStyle: 'classic' 
+      })
+     )
     // 命令行交互
     inquirer.prompt(prompt).then(answer => {
       const loading = ora('The template is loading ...')
@@ -63,7 +74,7 @@ program.version('1.1.1', '-v, --version')
                 fs.writeFileSync(fileName, JSON.stringify(packageObj, null, '\t'))
               }
               console.log(symbols.success, chalk.green('Done'))
-              log(chalk.blue(`   \n     欢迎使用 uniapp 脚手架 \n\n      当前版本 1.0.9 \n`))
+              log(chalk.blue(`   \n     欢迎使用 uniapp 脚手架 \n\n      当前版本 1.1.1 \n`))
               log(chalk.red(`     1  cd ${name} \n`))
               log(chalk.red(`     2  npm run init \n`))
               log(chalk.yellow(`    Please run in HBuilder X \n`))
