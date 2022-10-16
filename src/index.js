@@ -20,7 +20,7 @@ const initEslint = require('./utils/eslint')
 
 const log = console.log
 
-program.version('1.1.1', '-v, --version')
+program.version('1.1.2', '-v, --version')
   .command('create <name>')
   .action((name) => {
     log(boxen(
@@ -74,7 +74,7 @@ program.version('1.1.1', '-v, --version')
                 fs.writeFileSync(fileName, JSON.stringify(packageObj, null, '\t'))
               }
               console.log(symbols.success, chalk.green('Done'))
-              log(chalk.blue(`   \n     欢迎使用 uniapp 脚手架 \n\n      当前版本 1.1.1 \n`))
+              log(chalk.blue(`   \n     欢迎使用 uniapp 脚手架 \n\n      当前版本 1.1.2 \n`))
               log(chalk.red(`     1  cd ${name} \n`))
               log(chalk.red(`     2  npm run init \n`))
               log(chalk.yellow(`    Please run in HBuilder X \n`))
