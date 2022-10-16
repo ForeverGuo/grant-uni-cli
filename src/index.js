@@ -26,11 +26,11 @@ program.version('1.1.1', '-v, --version')
     log(boxen(
       chalk.yellow.bold(`HELLO UNIAPP`), 
       { 
-      title: chalk.red.bold(`WELCOME`), 
-      titleAlignment: 'center',
-      height: 4, 
-      padding: 2, 
-      borderStyle: 'classic' 
+        title: chalk.red.bold(`WELCOME`), 
+        titleAlignment: 'center',
+        height: 4, 
+        padding: 2, 
+        borderStyle: 'classic' 
       })
      )
     // 命令行交互
