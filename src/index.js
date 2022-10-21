@@ -36,7 +36,6 @@ program
       if (preset == 'vue2-hbx') {
         const eslint_inquirer = inquirer.prompt(eslint_prompts)
         eslint_inquirer.then(res => {
-          log(res)
           downloadInit(hbuilderInit, preset, meta, res)
         })
       }
