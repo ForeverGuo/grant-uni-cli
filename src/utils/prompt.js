@@ -1,4 +1,5 @@
-module.exports = [
+// 默认选项
+const default_prompts = [
   {
     name: 'version',
     message: 'version(1.0.0)'
@@ -17,15 +18,27 @@ module.exports = [
     message: 'Please pick a preset:',
     choices: [
         {
-            name: 'Default (Vue2)',
-            value: 'vue2',
+            name: 'Vue2 (HbuilderX 开发)',
+            value: 'vue2-hbx',
         },
         {
-            name: 'Default (Vue3)',
-            value: 'vue3',
+            name: 'Vue3 + TS (HbuilderX 开发)',
+            value: 'vue3-hbx',
+        },
+        {
+          name: 'Vue2 (CLI 版本)',
+          value: 'vue2-cli',
+        },
+        {
+          name: 'Vue3 + TS (CLI 版本)',
+          value: 'vue3-cli',
         }
     ]
-  },
+  }
+]
+
+// eslint 选项
+const eslint_prompts = [
   {
     type: 'list',
     name: 'lint',
@@ -36,7 +49,7 @@ module.exports = [
             value: 'none',
         },
         {
-            name: 'Eslint + Prettier ( 代码规范控制 )',
+            name: 'Eslint + Prettier ( 代码规范控制 vscode 开发 )',
             value: 'eslint',
         }
     ]
@@ -51,9 +64,14 @@ module.exports = [
             value: 'none',
         },
         {
-            name: 'husky ( git hook 代码检查, 须与 eslint 配合使用 )',
+            name: 'husky ( git hook 代码检查, 需与 eslint 配合使用 vscode开发 )',
             value: 'husky',
         }
     ]
   }
 ]
+
+module.exports = {
+  default_prompts,
+  eslint_prompts
+}
