@@ -29,6 +29,7 @@
     "lodash": "^4.17.21",
     "log-symbols": "^4.1.0",
     "ora": "^4.1.1",
+    "rxjs": "^6.6.7",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {

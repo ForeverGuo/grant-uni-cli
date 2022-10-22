@@ -35,6 +35,7 @@ program.version('1.1.2', '-v, --version')
      )
     // 命令行交互
     inquirer.prompt(prompt).then(answer => {
+
       const loading = ora('The template is loading ...')
       loading.start()
       const { preset, version, description, author, lint, husky } = answer
