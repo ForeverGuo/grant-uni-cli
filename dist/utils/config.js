@@ -2,8 +2,10 @@
 
 // 模板数据
 var templates = {
-  "vue2": 'ForeverGuo/uniapp-template-vue2#master',
-  "vue3": 'ForeverGuo/uniapp-template-vue3#master'
+  "vue2-hbx": 'ForeverGuo/uniapp-template-vue2#master',
+  "vue2-cli": 'ForeverGuo/uniapp-template-vue2#cli',
+  "vue3-hbx": 'ForeverGuo/uniapp-template-vue3#master',
+  "vue3-cli": 'ForeverGuo/uniapp-template-vue3#cli'
 }; // 配置 eslint + prettier 依赖
 
 var eslint = {
