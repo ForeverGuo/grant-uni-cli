@@ -1,12 +1,28 @@
 "use strict";
 
-// 模板数据
+/**
+ * @description 但前包版本
+ * @author grantguo
+ * @date 2022-10-26 23:26:20
+*/
+var npmVersion = '1.1.3';
+/**
+ * @description 模板数据
+ * @author grantguo
+ * @date 2022-10-26 23:25:49
+*/
+
 var templates = {
   "vue2-hbx": 'ForeverGuo/uniapp-template-vue2#master',
   "vue2-cli": 'ForeverGuo/uniapp-template-vue2#cli',
   "vue3-hbx": 'ForeverGuo/uniapp-template-vue3#master',
   "vue3-cli": 'ForeverGuo/uniapp-template-vue3#cli'
-}; // 配置 eslint + prettier 依赖
+};
+/**
+ * @description 配置 eslint + prettier 依赖
+ * @author grantguo
+ * @date 2022-10-26 23:25:59
+*/
 
 var eslint = {
   "devDependencies": {
@@ -50,5 +66,6 @@ var husky = {
 module.exports = {
   templates: templates,
   eslint_json: eslint,
-  husky_json: husky
+  husky_json: husky,
+  npmVersion: npmVersion
 };
