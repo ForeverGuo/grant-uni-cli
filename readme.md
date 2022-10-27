@@ -7,7 +7,7 @@
 ```
 
 ### 目录
-
+```js
   |—— bin           --------  执行文件
       |—— inde.js
   |—— dist          --------  打包文件
@@ -27,3 +27,4 @@
   |—— babel.config  --------  babel配置
   |—— package.json  
   |—— readme.md
+```

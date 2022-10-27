@@ -1,13 +1,13 @@
 "use strict";
 
 var dependencies = {
-  "vue2": {
+  "vue2-hbx": {
     "axios": "^0.21.1",
     "uview-ui": "^1.8.4",
     "vue": "^2.6.12",
     "vuex": "^3.6.2"
   },
-  "vue3": {
+  "vue3-hbx": {
     "axios": "^0.27.2",
     "pinia": "^2.0.22",
     "vk-uview-ui": "^1.3.9",
