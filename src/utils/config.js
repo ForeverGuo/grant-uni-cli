@@ -4,7 +4,7 @@
  * @author grantguo
  * @date 2022-10-26 23:26:20
 */
-const npmVersion = '1.1.5'
+const npmVersion = '1.1.6'
 
 /**
  * @description 模板数据
