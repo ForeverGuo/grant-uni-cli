@@ -61,6 +61,7 @@ function finalLog(preset, meta) {
   } else {
     log(chalk.greenBright("     3  npm run dev \n"));
     log(chalk.yellow("    HBuilderX OR VScode \n"));
+    log(chalk.redBright.bgYellow.bold("    \u5EFA\u8BAE node \u7248\u672C 12.0.0 \n"));
   }
 }
 

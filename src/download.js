@@ -48,6 +48,7 @@ function finalLog(preset, meta) {
   } else {
     log(chalk.greenBright(`     3  npm run dev \n`));
     log(chalk.yellow(`    HBuilderX OR VScode \n`));
+    log(chalk.redBright.bgYellow.bold(`    建议 node 版本 12.0.0 \n`));
   }
 }
 
