@@ -1,6 +1,6 @@
 {
   "name": "grant-uniapp-cli",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "uniapp cli",
   "bin": {
     "uniapp": "bin/index.js"
@@ -23,7 +23,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ForeverGuo/grant-uni-cli"
+    "url": "https://github.com/mcoeg/tea-repository1"
   },
   "dependencies": {
     "chalk": "^4.1.0",
